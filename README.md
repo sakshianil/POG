@@ -1,7 +1,7 @@
 # Nextflow Pipeline for Oomycete Effector Analysis
 
 ## Overview
-This pipeline performs comprehensive analysis on five oomycete proteomes to identify secreted effectors and investigate their regulatory architecture. It integrates tools for secretion prediction, effector classification, ortholog identification, upstream sequence extraction, motif discovery, and expression integration. The nextflow pipeline (**main.nf**) contains the further information on step-by-step scripts usage within pipeline 
+This pipeline performs comprehensive analysis on five oomycete proteomes to identify secreted effectors and investigate their regulatory architecture. It integrates tools for secretion prediction, effector classification, ortholog identification, upstream sequence extraction, motif discovery, and expression integration. The nextflow pipeline (**main.nf**) contains the further information on step-by-step scripts usage within pipeline. 
 
 ## Workflow Summary
 
