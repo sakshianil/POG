@@ -75,7 +75,7 @@ https://github.com/sakshianil/POOE_lite
 https://github.com/sakshianil/Transcriptional_regulation_oomycetes
 
 ## License
-MIT License
+MIT License © 2025 Sakshi Bharti
 
 ## How to Run
 – The Nextflow `main.nf` script and `config` file 
