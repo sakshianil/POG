@@ -1,7 +1,7 @@
 # Nextflow Pipeline for Oomycete Effector Analysis
 
 ## Overview
-This pipeline performs comprehensive analysis on five oomycete proteomes to identify secreted effectors and investigate their regulatory architecture. It integrates tools for secretion prediction, effector classification, ortholog identification, upstream sequence extraction, motif discovery, and expression integration. The nextflow pipeline (**main.nf**) contains the further information on step-by-step scripts usage within pipeline. 
+This Nextflow pipeline performs a comprehensive, reproducible analysis of five oomycete proteomes to identify effectors, characterize their promoter architecture and examine their amino acid composition. It integrates multiple modules for secretion prediction, effector classification, ortholog identification, upstream sequence extraction, motif discovery, and expression integration. The workflow has been optimized to explore transcriptional regulation and sequence-level features associated with pathogenicity, extending to both classically secreted and non-secreted effector-like candidates. The nextflow pipeline (**main.nf**) contains the further information on step-by-step scripts usage within pipeline. 
 
 ## Workflow Summary
 
@@ -42,7 +42,12 @@ This pipeline performs comprehensive analysis on five oomycete proteomes to iden
 - Script used: scripts/fetch_upstream_protein.sh 
 - Region: 1000 bp upstream from TSS
 
-### 7. **Motif Discovery and Annotation**
+### 7. **Amino Acid Composition Analysis**
+ - Script used : scripts/aminoacid_composition.R
+ - Results stored in results/aminoacid_composition/.
+ - Key insight: Amino acid profiles of signal peptide and conserved region, particularly hydrophobic and polar residue enrichment, correlate with promoter-level motif diversity and regulatory complexity across effector classes.
+
+### 8. **Motif Discovery and Annotation**
 - Tools: MEME Suite (MEME, FIMO, MAST, GOMO, AMA, TOMTOM)
 - Script used: scripts/motif_analysis.sh
 - Databases stored within resources folder (define path to all databases within script as well):
@@ -50,12 +55,12 @@ This pipeline performs comprehensive analysis on five oomycete proteomes to iden
   - ELM 2024
   - Custom GOMO dbs
 
-### 8. **Expression Data Integration**
+### 9. **Expression Data Integration**
 - Dataset: *Pl. halstedii* transcriptome (PRJEB49134)
 - Tool: DESeq2 (pipeline adapted from https://github.com/sakshianil/Transcriptional_regulation_oomycetes)
 - Use: Match conserved orthologs to time-series profiles
 
-### 9. **Visualization**
+### 10. **Visualization**
 - Tools:
   - R (ggplot2, pheatmap)
   - motifStack (for motif phylogeny and logos)
