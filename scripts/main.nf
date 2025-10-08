@@ -13,6 +13,7 @@ params {
   ortholog_script = "scripts/fetch_orthologs.sh"
   upstream_script = "scripts/fetch_upstream_protein.sh"
   motif_script = "scripts/motif_analysis.sh"
+  aa_script = "scripts/aminoacid_composition.R"
 }
 
 workflow {
@@ -25,6 +26,7 @@ workflow {
   fetchOrthologs()
   extractSequences()
   runMotifAnalysis()
+  aminoacidanalysis()
 }
 
 process downloadProteomes {
@@ -107,4 +109,6 @@ process runMotifAnalysis {
     bash ${params.motif_script}
     """
 }
+
+process aminoacidanalysis {
 
